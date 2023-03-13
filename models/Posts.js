@@ -7,8 +7,8 @@ Posts.init(
     {
         id:{
             type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true,
         },
         title:{
             type: DataTypes.STRING(20),
@@ -18,18 +18,10 @@ Posts.init(
             type: DataTypes.STRING(300),
             allowNull: false
         },
-        date:{
-            type: DataTypes.DATE,
-            allowNull: false
-        },
-        time:{
-            type: DataTypes.TIME,
-            allowNull: false
-        },
         poster_id: {
             type: DataTypes.INTEGER,
             references:{
-                model: 'User',
+                model: 'user',
                 key: 'id'
             }
         },

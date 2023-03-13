@@ -1,23 +1,16 @@
 const router = require('express').Router();
 const { User, Posts } = require('../models');
 
-// GET all galleries for homepage
+// GET all Posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({
-      include: [
-        {
-          model: Posts,
-          attributes: ['filename', 'description'],
-        },
-      ],
-    });
+    const allPosts = await Posts.findAll();
 
-    const galleries = userData.map((User) =>
-      User.get({ plain: true })
+    const posts = allPosts.map((project) =>
+      project.get({ plain: true })
     );
     res.render('homepage', {
-      galleries,
+      posts,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -26,34 +19,8 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one User
-router.get('/User/:id', async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.params.id, {
-      include: [
-        {
-          model: Posts,
-          attributes: [
-            'id',
-            'title',
-            'body',
-            'date',
-            'time'
-          ],
-        },
-      ],
-    });
-
-    const User = userData.get({ plain: true });
-    res.render('User', { User, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// GET one Posts
-router.get('/Posts/:id', async (req, res) => {
+// GET specific Post
+router.get('/posts/:id', async (req, res) => {
   try {
     const postData = await Posts.findByPk(req.params.id);
 

@@ -4,11 +4,10 @@ const { User, Posts } = require('../models');
 // GET all Posts for homepage
 router.get('/', async (req, res) => {
   try {
-    console.info("aslifhjasdjklhfkasdjhasdfhjsadhjk");
     const allPosts = await Posts.findAll();
 
-    const posts = postData.map((allPosts) =>
-      Posts.get({ plain: true })
+    const posts = allPosts.map((project) =>
+      project.get({ plain: true })
     );
     res.render('homepage', {
       posts,

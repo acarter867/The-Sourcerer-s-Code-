@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "first_name": "Sal",
+      "last_name": "D'mato",
+      "username": "doofus12345",
+      "email": "sal@hotmail.com",
+      "password": "password12345"
+    },
+    {
+        "id": 2,
+        "first_name": "Kyle",
+        "last_name": "isUgly",
+        "username": "ding dong",
+        "email": "something@something.com",
+        "password": "password12345"
+    },
+    {
+        "id": 3,
+        "first_name": "jon",
+        "last_name": "ng",
+        "username": "onetwothree",
+        "email": "jon@hotmail.com",
+        "password": "password12345"
+    },
+    {
+        "id": 4,
+        "first_name": "Person",
+        "last_name": "persona",
+        "username": "pres44",
+        "email": "SuperDingus@hotmail.com",
+        "password": "password145"
+    },
+    {
+        "id": 5,
+        "first_name": "Harry",
+        "last_name": "Houdini",
+        "username": "MagicMan456",
+        "email": "IMAFRAUD@hotmail.com",
+        "password": "magical"
+    }
+  ]
+  

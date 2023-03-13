@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Jon's First Question",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est vulputate, fermentum augue non, faucibus enim.",
+        "poster_id": 3
+    },
+    {
+        "id": 2,
+        "title": "Person's First Question",
+        "body": "Quisque efficitur finibus nisi eu vestibulum. Mauris a varius neque, dignissim volutpat enim. Vivamus gravida dictum lobortis.",
+        "poster_id": 4
+    },
+    {
+        "id": 3,
+        "title": "Harry's First Question",
+        "body": "Donec aliquet ultrices neque non ornare. Vivamus mattis sodales quam, malesuada faucibus libero maximus at. Morbi id arcu in augue vulputate ornare.",
+        "poster_id": 5
+    },
+    {
+        "id": 4,
+        "title": "Sal's First Question",
+        "body": "Pellentesque posuere blandit tortor, pretium vulputate lacus. Suspendisse posuere vel leo ac suscipit. Curabitur mollis eros in ligula faucibus, vel congue neque ullamcorper. Cras aliquet vel lacus quis condimentum. Maecenas sit amet diam mi. Fusce vel mattis lorem.",
+        "poster_id": 1
+    },
+    {
+        "id": 5,
+        "title": "Kyle's First Question",
+        "body": "Integer tincidunt euismod quam nec tempus. Donec quis feugiat quam, quis convallis purus.",
+        "poster_id": "2"
+    }
+]

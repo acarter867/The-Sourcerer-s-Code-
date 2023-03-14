@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 const { User, Posts } = require('../models');
 
 // GET all Posts for homepage
@@ -9,6 +10,7 @@ router.get('/', async (req, res) => {
     const posts = allPosts.map((project) =>
       project.get({ plain: true })
     );
+    console.log(posts);
     res.render('homepage', {
       posts,
       loggedIn: req.session.loggedIn,
@@ -24,12 +26,36 @@ router.get('/posts/:id', async (req, res) => {
   try {
     const postData = await Posts.findByPk(req.params.id);
 
-    const Posts = postData.get({ plain: true });
-    res.render('Posts', { Posts, loggedIn: req.session.loggedIn });
+    const posts = postData.get({ plain: true });
+    console.log(posts);
+    res.render('Posts', { posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+// Search by tag
+router.get('/tags/:id', async (req, res) => {
+    try{
+        
+        const tag = req.params.id;
+        const [results, metadata] = await sequelize.query(`SELECT posts.id, posts.poster_id, user.username, posts.title, posts.body, tags.post_id, tags.title
+        FROM posts, tags, user
+        WHERE posts.id = tags.post_id
+        AND user.id = posts.poster_id
+        AND tags.title = "${tag}";`)
+        console.log(results)
+        if(!results){
+            console.log("nope")
+            res
+                .status(400)
+                .json({ message: 'User does not exist, please edit your search and try again'})
+        }
+    }catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 // Login route

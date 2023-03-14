@@ -21,21 +21,3 @@ router.get('/users/:userName', async (req, res) => {
     }
 });
 
-// Search by tag
-router.get('/posts/:id', async (req, res) => {
-    try{
-        const postTags = await Posts.findAll({
-            where: {
-                id: req.params.id
-            }
-        });
-        if(!postTags){
-            res
-            .status(400)
-            .json({message: 'Tag does not exist. Please edit your search and try again'})
-        }
-    }catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});

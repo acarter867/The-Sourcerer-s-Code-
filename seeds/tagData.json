@@ -2,27 +2,27 @@
 
     {
         "id": 1,
-        "title": "#JavaScript",
+        "title": "JavaScript",
         "post_id": 5
     },
     {
         "id": 2,
-        "title": "#HTML5",
+        "title": "HTML5",
         "post_id": 1
     },
     {
         "id": 3,
-        "title": "#React.js",
+        "title": "React.js",
         "post_id": 2
     },
     {
         "id": 4,
-        "title": "#PHP",
+        "title": "PHP",
         "post_id": 3
     },
     {
         "id": 5,
-        "title": "#Python",
+        "title": "Python",
         "post_id": 4
     }
 ]

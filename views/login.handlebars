@@ -1,17 +1,42 @@
 <h2>Login</h2>
 
-<form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
-    <input class="form-input" type="text" id="email-login" />
-  </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
-  </div>
-</form>
+<section class="login">
+  <form class="form login-form">
+      <label for="email-login">email:</label>
+      <input class="form-input" type="text" id="email-login" />
 
-<script src="/js/login.js"></script>
+      <label for="password-login">password:</label>
+      <input class="form-input" type="password" id="password-login" />
+
+      <button class="btn" type="submit">Login!</button>
+  </form>
+</section>
+
+<section class="sign-up">
+  <form class="form sign-up-form">
+    <label for="first-name-sign-up">First Name:</label>
+    <input class="form-input" type="text" id="first-name-sign-up">
+
+    <label for="last-name-sign-up">Last Name:</label>
+    <input class="form-input" type="text" id="last-name-sign-up">
+
+    <label for="email-sign-up">Email:</label>
+    <input class="form-input" type="email" id="email-sign-up">
+
+    <label for="username-sign-up">Username:</label>
+    <input class="form-input" type="text" id="username-sign-up">
+    <button class="username-avalability">Check availability</button>
+
+    <label for="password-sign-up">Password:</label>
+    <input class="form-input" type="password" id="password-sign-up">
+    <label for="retype-password">Re-enter Password:</label>
+    <input class="form-input" type="password" id="retype-password">
+
+    <button class="btn">Sign up!</button>
+
+  </form>
+</section>
+
+
+<script src="/public/js/login.js"></script>
+<script src="/public/js/signup.js"></script>

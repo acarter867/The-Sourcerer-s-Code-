@@ -14,7 +14,7 @@ router.get('/', withAuth, async (req, res) => {
     console.log(posts);
     res.render('homepage', {
       posts,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -29,7 +29,7 @@ router.get('/posts/:id', async (req, res) => {
 
     const posts = postData.get({ plain: true });
     console.log(posts);
-    res.render('Posts', { posts, loggedIn: req.session.loggedIn });
+    res.render('Posts', { posts, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -61,7 +61,7 @@ router.get('/tags/:id', async (req, res) => {
 
 // Login route
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }

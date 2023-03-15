@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Posts } = require('../models');
+const withAuth = require('../utils/auth');
 
 // GET all Posts for homepage
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const allPosts = await Posts.findAll();
 

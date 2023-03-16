@@ -10,8 +10,48 @@
     <input class="form-input" type="password" id="password-login" />
   </div>
   <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
+    <button id="btn-submit" class="btn btn-primary" type="submit">login</button>
   </div>
 </form>
 
+
+
+<section class="sign-up">
+    <div>
+      <label for="first-name-sign-up">First Name:</label>
+      <input class="form-input" type="text" id="first-name-sign-up">
+    </div>
+    
+    <div>
+      <label for="last-name-sign-up">Last Name:</label>
+      <input class="form-input" type="text" id="last-name-sign-up">
+    </div>
+
+    <div>
+      <label for="email-sign-up">Email:</label>
+      <input class="form-input" type="email" id="email-sign-up">
+    </div>
+
+    <div>
+      <label for="username-sign-up">Username:</label>
+      <input class="form-input" type="text" id="username-sign-up">
+      <button id="username-availability">Check availability</button>
+      <p id="username-status"></p>
+    </div>
+
+    <div>
+      <label for="password-sign-up">Password:</label>
+      <input class="form-input" type="password" id="password-sign-up">
+    </div>    
+
+    <div>
+      <label for="retype-password">Re-enter Password:</label>
+      <input class="form-input" type="password" id="retype-password">
+      <p id="password-status"></p>
+    </div>
+    <button id="submit-sign-up" class="btn">Sign up!</button>
+</section>
+
+
 <script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>

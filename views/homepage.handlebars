@@ -2,7 +2,8 @@
   <h1>{{username}}</h1>
   <button class="btn" id="newpost">New Post</button>
 </nav>
-{{#each posts as |post| }}
+{{#each posts as |post|}}
+
 <div class="">
   <div class="col-md-6">
     <h2>{{post.poster_username}}: {{post.title}}</h2>
@@ -10,8 +11,12 @@
   <div class="">
     <h3>{{post.body}}</h3>
   </div>
+
+  {{#if (isAuthor @root.username post.poster_username)}}
   <button class="edit-post" data-id="{{post.id}}">Edit</button>
   <button class="delete-post" data-id="{{post.id}}">Delete</button>
+  {{/if}}
 </div>
+
 {{/each}}
 <script src="/js/home.js"></script>

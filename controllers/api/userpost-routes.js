@@ -45,6 +45,7 @@ router.post("/", async (req, res) => {
       title: req.body.title,
       body: req.body.body,
       poster_id: req.session.userId,
+      poster_username: req.session.username,
     });
     console.log("This is post data: ", postData);
     res.status(200).json(postData);

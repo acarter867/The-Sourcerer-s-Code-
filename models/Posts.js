@@ -12,7 +12,7 @@ Posts.init(
             autoIncrement: true
         },
         title:{
-            type: DataTypes.STRING(20),
+            type: DataTypes.STRING(50),
             allowNull: false
         },
         body:{
@@ -27,6 +27,14 @@ Posts.init(
                 key: 'id'
             }
         },
+        poster_username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references:{
+                model: 'user',
+                key: 'username'
+            },
+        }
     },
     {
         sequelize,

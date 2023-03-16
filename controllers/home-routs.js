@@ -15,6 +15,7 @@ router.get('/', withAuth, async (req, res) => {
     if (req.session.logged_in) {
       res.render('homepage', {
         posts,
+        username: req.session.username,
         logged_in: req.session.logged_in,
       });
     } else {

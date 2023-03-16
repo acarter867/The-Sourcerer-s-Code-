@@ -1,18 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <form>
-        <div class="form-group">
-          <input id="post-title" type="text" class="form-control" name="title" placeholder="Title"/>
-        </div>
-        <div class="form-group">
-          <textarea id="post-body" class="form-control bcontent" name="content"></textarea>
-        </div>
-        <div class="form-group">
-           <input id="submitpost" type="submit" name="Submit" value="Publish" class="btn btn-primary form-control" />
-        </div>
-      </form>
-    </div>
+{{#if editMode}}
+<form>
+  <div>
+    <input id="post-title" type="text" value="{{post.title}}"/>
   </div>
-</div>
+  <div class="form-group">
+    <textarea id="post-body">{{post.body}}</textarea>
+  </div>
+  <div class="form-group">
+    <input id="submitpost" type="submit" data-id="{{post.id}}" value="Publish"/>
+  </div>
+</form>
+<script src="/js/editpost.js"></script>
+{{else}}
+<form>
+  <div>
+    <input id="post-title" type="text" placeholder="Title"/>
+  </div>
+  <div class="form-group">
+    <textarea id="post-body"></textarea>
+  </div>
+  <div class="form-group">
+    <input id="submitpost" type="submit" value="Publish"/>
+  </div>
+</form>
 <script src="/js/newpost.js"></script>
+{{/if}}

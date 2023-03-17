@@ -35,4 +35,4 @@ Comments.belongsTo(User, {
   foreignKey: "poster_id",
 });
 
-module.exports = { User, Posts, Tags };
+module.exports = { User, Posts, Tags, Comments };

@@ -1,5 +1,7 @@
+
 // get comment thread
 const getComments = async (event) => {
+  const sessId = document.getElementById('session-username').textContent;
   const postId = event.target.getAttribute("data-id");
   let eventState = event.target.getAttribute("data-state");
   const containerEl = event.target.nextElementSibling;
@@ -13,18 +15,34 @@ const getComments = async (event) => {
     if (response.ok) {
       const allComments = await response.json();
       for (let x in allComments) {
+        console.log(allComments[x])
         let displaybox = document.createElement("div");
         let paragraph = document.createElement("p");
         let body = document.createTextNode(allComments[x].body);
         let byline = document.createElement("p");
         let author = document.createTextNode(
-          " - " + allComments[x].poster_username
+          " - " + allComments[x].poster_username          
         );
+
         paragraph.appendChild(body);
         byline.appendChild(author);
         displaybox.appendChild(paragraph);
         displaybox.appendChild(byline);
         containerEl.appendChild(displaybox);
+        
+        if(sessId === allComments[x].poster_username){
+          console.log("isOwner");
+          let btnEdit = document.createElement('button');
+          btnEdit.textContent = "Edit";
+
+          let btnDelete = document.createElement('button');
+          btnDelete.textContent = "Delete";
+
+          paragraph.appendChild(btnEdit);
+          paragraph.appendChild(btnDelete);
+        }else{
+          console.log("Not OWNER")
+        }
       }
     }
   } else {

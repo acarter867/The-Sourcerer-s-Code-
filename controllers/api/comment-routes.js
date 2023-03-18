@@ -1,6 +1,27 @@
 const router = require("express").Router();
 const { Comments } = require("../../models");
 
+// get comments for a post
+router.get("/:id", async (req, res) => {
+  try {
+    if (req.session.logged_in) {
+      const commentData = await Comments.findAll({
+        where: {
+          parent_id: req.params.id,
+        },
+      });
+      const comments = commentData.map((arr) => arr.get({ plain: true }));
+      console.log('Comments: ', comments);
+      if (comments) {
+        res.status(200).json(comments);
+      }
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // new comment
 router.post("/:id", async (req, res) => {
   try {
@@ -27,7 +48,7 @@ router.put("/:id", async (req, res) => {
       {
         where: {
           id: req.params.id,
-          poster_id: req.session.userID,
+          poster_id: req.session.userId,
         },
       }
     );

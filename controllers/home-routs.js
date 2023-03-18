@@ -9,15 +9,11 @@ router.get("/", withAuth, async (req, res) => {
     const allPosts = await Posts.findAll({
       include: [Comments],
     });
-    // const parsed = JSON.parse(allPosts);
     const posts = allPosts.map((project) => project.get({ plain: true }));
     console.log(posts);
-    const comments = posts.comments;
-    console.log(comments);
     if (req.session.logged_in) {
       res.render("homepage", {
         posts,
-        comments,
         username: req.session.username,
         logged_in: req.session.logged_in,
       });

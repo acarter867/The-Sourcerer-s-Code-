@@ -61,6 +61,8 @@ document.querySelectorAll(".comment-box").forEach((btn) => {
       } else {
         alert("Failed to post comment.");
       }
+    } else {
+      alert('Cannot post empty comment.')
     }
   });
 });

@@ -55,7 +55,7 @@ document.querySelectorAll(".comment-box").forEach((btn) => {
         );
         const threadbox = document.querySelector(`[name='thread${postId}']`);
         threadbox.innerHTML = null;
-        btn.firstElementChild.innerHTML = null;
+        btn.firstElementChild.value = null;
         commentbtn.setAttribute("data-state", "show");
         commentbtn.click();
       } else {

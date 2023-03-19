@@ -52,7 +52,7 @@ router.put("/:id", async (req, res) => {
         },
       }
     );
-    if (commentData) {
+    if (!commentData) {
       res.status(404).json({ message: "Unable to update comment." });
       return;
     }

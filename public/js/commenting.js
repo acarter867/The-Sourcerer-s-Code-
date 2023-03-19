@@ -86,9 +86,7 @@ const editComment = async (event) => {
   const editorBtn = event.target;
   const postId = event.target.getAttribute("data-id");
   const container = event.target.parentElement;
-  const thread = container.parentElement;
   const originalBody = container.children[0];
-  console.log("OG body el: ", originalBody);
   const byline = container.children[1];
   let dataState = event.target.getAttribute("data-state");
   if (dataState == "edit") {
@@ -102,9 +100,9 @@ const editComment = async (event) => {
     cancelBtn.addEventListener("click", (event) => {
       originalBody.style.display = "block";
       byline.style.display = "block";
-      container.children[2].remove();
       editorBtn.innerHTML = "Edit";
       editorBtn.setAttribute("data-state", "edit");
+      container.children[2].remove();
       event.target.remove();
     });
     container.insertBefore(editBox, event.target);
@@ -128,12 +126,8 @@ const editComment = async (event) => {
         container.children[3].remove();
         event.target.innerHTML = "Edit";
         event.target.setAttribute("data-state", "edit");
-        // const threadId = thread.getAttribute("data-id");
-        // const commentbtn = document.querySelector(
-        //   `[name='commentbtn${threadId}']`
-        // );
-        // thread.innerHTML = null;
-        // commentbtn.click();
+      } else {
+        alert("Could not update comment.");
       }
     } else {
       alert("Comment cannot be empty.");
@@ -141,10 +135,19 @@ const editComment = async (event) => {
   }
 };
 
-// cancel-edit
-
 // delete comment request
-const deleteComment = async (event) => {};
+const deleteComment = async (event) => {
+  const postId = event.target.getAttribute("data-id");
+  const response = await fetch("/api/comments/" + postId, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    event.target.parentElement.remove();
+  } else {
+    alert("Could not delete comment.");
+  }
+};
 
 // event handlers
 document.querySelectorAll(".render-comments").forEach((btn) => {

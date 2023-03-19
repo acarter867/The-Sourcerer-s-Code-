@@ -10,7 +10,7 @@ document.querySelectorAll(".edit-post").forEach((btn) => {
 document.querySelectorAll(".delete-post").forEach((btn) => {
   btn.addEventListener("click", async (event) => {
     const postId = event.target.getAttribute("data-id");
-    const response = await fetch("api/posts/" + postId, {
+    const response = await fetch("/api/posts/" + postId, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     });

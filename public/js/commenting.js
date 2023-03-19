@@ -122,8 +122,10 @@ const editComment = async (event) => {
         originalBody.style.display = "block";
         byline.style.display = "block";
         originalBody.innerHTML = body;
-        container.children[2].remove();
-        container.children[3].remove();
+        const input = container.children[2];
+        const cancel = container.children[3];
+        input.remove();
+        cancel.remove();
         event.target.innerHTML = "Edit";
         event.target.setAttribute("data-state", "edit");
       } else {

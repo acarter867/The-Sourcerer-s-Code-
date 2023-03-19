@@ -7,7 +7,7 @@ const withAuth = require("../utils/auth");
 router.get("/", withAuth, async (req, res) => {
   try {
     const allPosts = await Posts.findAll({
-      include: [Comments],
+      order: [["id", "DESC"]],
     });
     const posts = allPosts.map((project) => project.get({ plain: true }));
     console.log(posts);

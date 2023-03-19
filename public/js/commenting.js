@@ -18,32 +18,24 @@ const getComments = async (event) => {
         console.log(allComments[x]);
         let id = allComments[x].id;
         let displaybox = document.createElement("div");
-        let paragraph = document.createElement("p");
-        let body = document.createTextNode(allComments[x].body);
-        let byline = document.createElement("p");
-        let author = document.createTextNode(
-          " - " + allComments[x].poster_username
-        );
-
-        paragraph.appendChild(body);
-        byline.appendChild(author);
-        displaybox.appendChild(paragraph);
-        displaybox.appendChild(byline);
+        let content = `
+        <div id="ccard${id}">
+          <p id="cbody${id}">${allComments[x].body}</p>
+          <p id="byline${id}"> – ${allComments[x].poster_username}</p>
+        </div>`;
+        displaybox.setAttribute('id', 'comment' + id);
+        displaybox.innerHTML = content;
         containerEl.appendChild(displaybox);
 
         if (sessId === allComments[x].poster_username) {
-          console.log("isOwner");
-          let btnEdit = document.createElement("button");
-          btnEdit.setAttribute("data-state", "edit");
-          btnEdit.setAttribute("data-id", id);
-          btnEdit.textContent = "Edit";
+          let modDash = `
+          <button id="edit${id}" data-id="${id}" data-state="edit">Edit</button>
+          <button id="delete${id}" data-id="${id}">Delete</button>`;
+          displaybox.innerHTML = content + modDash;
+          let btnEdit = document.getElementById("edit" + id);
+          let btnDelete = document.getElementById("delete" + id);
           btnEdit.addEventListener("click", editComment);
-          let btnDelete = document.createElement("button");
-          btnDelete.textContent = "Delete";
-          btnDelete.setAttribute("data-id", id);
           btnDelete.addEventListener("click", deleteComment);
-          displaybox.appendChild(btnEdit);
-          displaybox.appendChild(btnDelete);
         } else {
           console.log("Not OWNER");
         }
@@ -81,53 +73,51 @@ const createComment = async (event) => {
   }
 };
 
-// edit comment call
 const editComment = async (event) => {
   const editorBtn = event.target;
-  const postId = event.target.getAttribute("data-id");
-  const container = event.target.parentElement;
-  const originalBody = container.children[0];
-  const byline = container.children[1];
-  let dataState = event.target.getAttribute("data-state");
+  const id = editorBtn.getAttribute("data-id");
+  const container = document.getElementById("comment" + id);
+  const originalBody = document.getElementById("cbody" + id);
+  const card = document.getElementById("ccard" + id);
+  let dataState = editorBtn.getAttribute("data-state");
   if (dataState == "edit") {
     const editBox = document.createElement("textarea");
     const cancelBtn = document.createElement("button");
     let rawText = originalBody.innerHTML;
-    originalBody.style.display = "none";
-    byline.style.display = "none";
+    card.style.display = "none";
     editBox.value = rawText;
+    editBox.setAttribute('id', 'cedit' + id);
     cancelBtn.innerHTML = "Cancel Changes";
+    cancelBtn.setAttribute('id', 'ccancel' + id);
     cancelBtn.addEventListener("click", (event) => {
-      originalBody.style.display = "block";
-      byline.style.display = "block";
+      card.style.display = "block";
       editorBtn.innerHTML = "Edit";
       editorBtn.setAttribute("data-state", "edit");
       container.children[2].remove();
       event.target.remove();
     });
-    container.insertBefore(editBox, event.target);
-    container.insertBefore(cancelBtn, event.target);
-    event.target.setAttribute("data-state", "save");
-    event.target.innerHTML = "Submit Changes";
+    container.insertBefore(editBox, editorBtn);
+    container.insertBefore(cancelBtn, editorBtn);
+    editorBtn.setAttribute("data-state", "save");
+    editorBtn.innerHTML = "Submit Changes";
   } else {
     event.preventDefault();
-    let body = container.children[2].value;
+    const input = document.getElementById('cedit' + id);
+    let body = input.value;
     if (body) {
-      const response = await fetch("/api/comments/" + postId, {
+      const response = await fetch("/api/comments/" + id, {
         method: "PUT",
         body: JSON.stringify({ body }),
         headers: { "Content-Type": "application/json" },
       });
       if (response.ok) {
-        originalBody.style.display = "block";
-        byline.style.display = "block";
+        card.style.display = "block";
         originalBody.innerHTML = body;
-        const input = container.children[2];
-        const cancel = container.children[3];
+        const cancel = document.getElementById('ccancel' + id);
         input.remove();
         cancel.remove();
-        event.target.innerHTML = "Edit";
-        event.target.setAttribute("data-state", "edit");
+        editorBtn.innerHTML = "Edit";
+        editorBtn.setAttribute("data-state", "edit");
       } else {
         alert("Could not update comment.");
       }
@@ -139,8 +129,8 @@ const editComment = async (event) => {
 
 // delete comment request
 const deleteComment = async (event) => {
-  const postId = event.target.getAttribute("data-id");
-  const response = await fetch("/api/comments/" + postId, {
+  const id = event.target.getAttribute("data-id");
+  const response = await fetch("/api/comments/" + id, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
   });

@@ -1,5 +1,5 @@
 <nav>
-  <h1>{{username}}</h1>
+  <h1 id="session-username">{{username}}</h1>
   <button class="btn" id="newpost">New Post</button>
 </nav>
 {{#each posts as |post|}}
@@ -16,7 +16,15 @@
   <button class="edit-post" data-id="{{post.id}}">Edit</button>
   <button class="delete-post" data-id="{{post.id}}">Delete</button>
   {{/if}}
+  <div>
+    <button class="render-comments" data-id="{{post.id}}" name="commentbtn{{post.id}}" data-state="show">See Comments</button>
+    <div data-id="{{post.id}}" name="thread{{post.id}}"></div>
+  </div>
+  <div class="comment-box">
+    <textarea rows="5" cols="33" placeholder="Write comment..."></textarea>
+    <button data-id="{{post.id}}">Leave Comment</button>
+  </div>
 </div>
-
 {{/each}}
 <script src="/js/home.js"></script>
+<script src="/js/commenting.js"></script>

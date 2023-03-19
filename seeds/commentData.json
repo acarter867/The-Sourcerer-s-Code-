@@ -1,0 +1,37 @@
+[
+    {
+        "id": 2,
+        "body": "Double it and give it to the next person.",
+        "poster_id": 2,
+        "poster_username": "ding dong",
+        "parent_id": 3
+    },
+    {
+        "id": 3,
+        "body": "No problem.",
+        "poster_id": 3,
+        "poster_username": "onetwothree",
+        "parent_id": 4
+    },
+    {
+        "id": 4,
+        "body": "Delicious Mexican cuisine.",
+        "poster_id": 4, 
+        "poster_username": "pres44",
+        "parent_id": 5
+    },
+    {
+        "id": 5,
+        "body": "Congratulations.",
+        "poster_id": 5,
+        "poster_username": "MagicMan456",
+        "parent_id": 1
+    },
+    {
+        "id": 6,
+        "body": "Thanks I hate it.",
+        "poster_id": 1,
+        "poster_username": "doofus12345",
+        "parent_id": 2
+    }
+]

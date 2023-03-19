@@ -83,6 +83,7 @@ const createComment = async (event) => {
 
 // edit comment call
 const editComment = async (event) => {
+  const editorBtn = event.target;
   const postId = event.target.getAttribute("data-id");
   const container = event.target.parentElement;
   const thread = container.parentElement;
@@ -91,16 +92,20 @@ const editComment = async (event) => {
   const byline = container.children[1];
   let dataState = event.target.getAttribute("data-state");
   if (dataState == "edit") {
-    const rawText = originalBody.innerHTML;
-    console.log("Raw text:", rawText);
+    const editBox = document.createElement("textarea");
+    const cancelBtn = document.createElement("button");
+    let rawText = originalBody.innerHTML;
     originalBody.style.display = "none";
     byline.style.display = "none";
-    let editBox = document.createElement("textarea");
     editBox.value = rawText;
-    const cancelBtn = document.createElement("button");
     cancelBtn.innerHTML = "Cancel Changes";
     cancelBtn.addEventListener("click", (event) => {
-      console.log("Post ID: ", postId);
+      originalBody.style.display = "block";
+      byline.style.display = "block";
+      container.children[2].remove();
+      editorBtn.innerHTML = "Edit";
+      editorBtn.setAttribute("data-state", "edit");
+      event.target.remove();
     });
     container.insertBefore(editBox, event.target);
     container.insertBefore(cancelBtn, event.target);
@@ -116,13 +121,19 @@ const editComment = async (event) => {
         headers: { "Content-Type": "application/json" },
       });
       if (response.ok) {
-        const threadId = thread.getAttribute("data-id");
-        const commentbtn = document.querySelector(
-          `[name='commentbtn${threadId}']`
-        );
-        commentbtn.setAttribute("data-state", "show");
-        thread.innerHTML = null;
-        commentbtn.click();
+        originalBody.style.display = "block";
+        byline.style.display = "block";
+        originalBody.innerHTML = body;
+        container.children[2].remove();
+        container.children[3].remove();
+        event.target.innerHTML = "Edit";
+        event.target.setAttribute("data-state", "edit");
+        // const threadId = thread.getAttribute("data-id");
+        // const commentbtn = document.querySelector(
+        //   `[name='commentbtn${threadId}']`
+        // );
+        // thread.innerHTML = null;
+        // commentbtn.click();
       }
     } else {
       alert("Comment cannot be empty.");

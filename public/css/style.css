@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    font-family: garamond;
+}
+
+html{
+    background-image: url('/Images/pexels-mahdi-bafande-14832629.jpg');
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+header{
+    display: flex;
+    height: 3vw;
+    justify-content: space-between;
+    background-color: rgba(38, 45, 128, .3);
+    min-height: 50px;
+}
+
+h1{
+    font-size: 2vw;
+}
+
+#logout{
+    height: 100%;
+    width: fit-content;
+    font-size: 1vw;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: white;
+    margin-right: .5vw;
+    transition: 0.5s;
+}
+
+#logout:hover{
+    background-color: rgb(0, 255, 128, .3);
+}
+
+#logout:hover{
+    cursor: pointer;
+}
+
+#project-title{
+    padding-left: 10px;
+    padding-top: 10px;
+    color: rgb(255, 255, 255);
+}
+
+/*********************************************LOG IN PAGE*/
+
+/* Login form */
+
+.login-page{
+    color: white;
+}
+
+input{
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.login-title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 7vw;
+    font-size: 3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 255, 128);
+    background-color: rgba(0, 0, 0, 0.61);  
+    box-shadow: 0 0 25px 15px rgba(0, 0, 0, .9);
+    padding: .5vw;
+    border-radius: 10px;
+}
+.login-form{
+    position: absolute;
+    top: 15vw;
+    left: 20%;
+    background-color: rgba(0, 0, 0, 0.61);    
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px 15px rgba(0, 0, 0, .9);
+    height: 13vw;
+}
+
+.login-form h2{
+    font-size: 3vw;
+    margin-left: auto;
+    text-align: center;
+}
+
+.login-form button{
+    display: inline;
+    font-size: 1.5vw;
+    align-items: center;
+    margin-left: 45%;
+    background-color: rgba(0, 0, 0, .5);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 3px;
+    transition: 0.3s;
+}
+
+.login-form button:hover{
+    color: rgb(0, 255, 128);
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+}
+
+.login-form input{
+    font-size: 1.5vw;
+    margin-left: 1vw;
+}
+
+.input-label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1vw;
+    font-size: 1.5vw;
+}
+
+.login-form h2{
+    margin-bottom: 15px;
+}
+
+
+.background-img img{
+    width: 103vw;
+    height: 103vh;
+    background-attachment: fixed;
+}
+
+
+/* Sign-up-form */ 
+
+.sign-up-form{
+    position: absolute;
+    top: 15vw;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.7);    
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px 15px rgba(0, 0, 0, .9);
+    height: 23vw;
+}
+
+
+
+
+.sign-up-form h2{
+    font-size: 3vw;
+    text-align: center;
+    margin-bottom: .5vw;
+}
+
+.sign-up-form button{
+    display: inline;
+    font-size: 1.5vw;
+    align-items: center;
+    margin-left: 45%;
+    background-color: rgba(0, 0, 0, .5);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    transition: 0.3s;
+}
+
+.sign-up-form button:hover{
+    color: rgb(0, 255, 128);
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+}
+
+.sign-up-form input{
+    font-size: 1.5vw;
+    margin-left: 1vw;
+}
+
+/******************************HOMEPAGE***************************/
+.home-section{
+    margin: 10px;
+    position: absolute;
+    margin-top: 7vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+#session-username{
+    color: white;
+}
+
+#username-new-post{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -2vw;
+    margin-bottom: 2vw;
+}
+
+#username-new-post button{
+    margin-left: 10px;
+    font-size: 1vw;
+    background-color: rgba(92, 92, 235, .3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#username-new-post button:hover{
+    background-color: rgba(0, 255, 128, .3);
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+
+}
+
+/* Individual Posts */
+.post{
+    border: 2px solid black;
+    width: 30vw;
+    margin-bottom: 3vh;
+    padding: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 0 0 25px 8px rgba(0, 0, 0, .9);
+}
+
+/* edit/delete post buttons */
+.edit-delete-post{
+    position: relative;
+    left: 10%;
+    align-content: center;
+    
+}
+
+.edit-delete-post button{
+    font-size: .8vw;
+    transition: 0.3s;
+}
+
+/* post author & title */
+.username-title{
+    display: flex;
+    border-bottom: 2px solid gray;
+    text-align: center;
+}
+.post-username{
+    font-size: 1.5vw;
+    margin-right: 1vw;
+}
+
+.post-title{
+    font-size: 1.5vw;
+}
+
+/* Post Body */ 
+.post-body{
+    padding-top: .5vw;
+    padding-bottom: .75vw;
+    font-size: 1vw;
+}
+
+/* comment section (NOT ACTUAL COMMENTS) */
+
+.comments{
+    display: flex;
+}
+
+.comments button{
+    font-size: .8vw;
+}
+
+.comment-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-box textarea{
+    resize: none;
+    width: 12vw;
+    font-size: 1vw;
+    background-color: rgba(0, 0, 0, .1);
+    color: white;
+}
+
+.show-hide-comments{
+    margin-left: 15%;
+}
+
+.comment{
+    border: 1px solid gray;
+    padding: .3vw;
+    margin-top: .5vw;
+    margin-bottom: .5vw;
+    font-size: 1vw;
+}
+
+.delete-post{
+    background-color: rgba(155, 64, 64, .6);
+    border: none;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.delete-post:hover{
+    box-shadow: 0 0 25px 3px rgba(255, 0, 0, 0.5);
+}
+
+.edit-post{
+    background-color: rgba(92, 92, 235, .6);
+    border-color: rgb(92, 92, 235);;
+    border: none;
+    color: rgb(255, 255, 255);
+}
+
+.edit-post:hover{
+    box-shadow: 0 0 25px 3px rgba(92, 92, 235, .6);
+}
+
+.submit-comment{
+    background-color: rgba(86, 205, 140, 0.3);
+    border: none;
+    color: white;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    transition: 0.5s;
+}
+
+.submit-comment:hover{
+    background-color: rgba(86, 205, 140, 0.6);
+}
+
+.render-comments{
+    padding: 3px;
+    background-color: rgba(86, 205, 140, 0.1);
+    transition: 0.3s;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.render-comments:hover{
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+    background-color: rgba(14, 183, 90, 0.4);
+}
+
+/******************************************** NEW POST***********************/
+.new-post-title, .edit-post-title{
+    font-size: 4vw;
+    color: rgb(86, 205, 140);
+    margin-top: 1.5vw;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.5);
+}
+
+.post-create-form, .post-edit-form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+.new-post-title-input, .edit-post-title-input{
+    margin-top: 2vw;
+    width: 12vw;
+    font-size: 1.5vw;
+}
+
+.new-create-textarea, .new-edit-textarea{
+    resize: none;
+    width: 12vw;
+    font-size: 1vw;
+    background-color: rgba(0, 0, 0, .1);
+    color: white;
+    height: 5vw;
+}
+
+.submit-btn{
+    font-size: 1.5vw;
+    background-color: rgba(92, 92, 235, .3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.submit-btn:hover{
+    cursor: pointer;
+    background-color: rgba(0, 255, 128, .3);
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+}

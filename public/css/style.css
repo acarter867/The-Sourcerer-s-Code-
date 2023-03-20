@@ -2,6 +2,11 @@
     margin: 0;
 
 }
+
+button:hover{
+    cursor: pointer;
+}
+
 header{
     display: flex;
     height: 5vh;
@@ -34,6 +39,10 @@ h1{
 /*********************************************LOG IN PAGE*/
 
 /* Login form */
+
+.login-page{
+    color: white;
+}
 
 .login-form{
     position: absolute;
@@ -111,3 +120,65 @@ h1{
     font-size: 1.5vw;
     margin-left: 1vw;
 }
+
+/******************************HOMEPAGE***************************/
+.home-section{
+    margin: 10px;
+
+}
+
+#username-new-post{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#username-new-post button{
+    margin-left: 10px;
+    font-size: 1vw;
+    background-color: rgb(92, 92, 235);
+    border: none;
+    border-radius: 10px;
+}
+
+/* Individual Posts */
+.post{
+    border: 2px solid black;
+    width: 30vw;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+/* edit/delete post buttons */
+.edit-delete-post{
+    position: relative;
+    left: 10%;
+    align-content: center;
+}
+
+.edit-delete-post button{
+    font-size: .8vw;
+}
+
+/* post author & title */
+.username-title{
+    display: flex;
+    border-bottom: 2px solid gray;
+    text-align: center;
+}
+.post-username{
+    font-size: 1.5vw;
+    margin-right: 1vw;
+}
+
+.post-title{
+    font-size: 1.5vw;
+}
+
+/* Post Body */ 
+.post-body{
+    padding-top: .5vw;
+    padding-bottom: .5vw;
+    font-size: 1vw;
+}
+

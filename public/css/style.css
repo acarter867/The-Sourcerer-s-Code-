@@ -147,6 +147,7 @@ h1{
     width: 30vw;
     margin-bottom: 30px;
     padding: 10px;
+    align-items: center;
 }
 
 /* edit/delete post buttons */
@@ -178,10 +179,40 @@ h1{
 /* Post Body */ 
 .post-body{
     padding-top: .5vw;
-    padding-bottom: .5vw;
+    padding-bottom: .75vw;
     font-size: 1vw;
 }
 
 /* comment section (NOT ACTUAL COMMENTS) */
 
+.comments{
+    display: flex;
+}
+
+.comments button{
+    font-size: .8vw;
+}
+
+.comment-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-box textarea{
+    resize: none;
+    width: 12vw;
+    font-size: 1vw;
+}
+
+.show-hide-comments{
+    margin-left: 15%;
+}
+
+.comment{
+    border: 1px solid gray;
+    padding: .3vw;
+    margin-top: .5vw;
+    margin-bottom: .5vw;
+    font-size: 1vw;
+}
 

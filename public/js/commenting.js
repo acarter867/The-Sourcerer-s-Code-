@@ -19,7 +19,7 @@ const getComments = async (event) => {
         let id = allComments[x].id;
         let displaybox = document.createElement("div");
         let content = `
-        <div id="ccard${id}">
+        <div class="comment" id="ccard${id}">
           <p id="cbody${id}">${allComments[x].body}</p>
           <p id="byline${id}"> – ${allComments[x].poster_username}</p>
         </div>`;
@@ -28,8 +28,8 @@ const getComments = async (event) => {
         containerEl.appendChild(displaybox);
         if (sessId === allComments[x].poster_username) {
           let modDash = `
-          <button id="edit${id}" data-id="${id}" data-state="edit">Edit</button>
-          <button id="delete${id}" data-id="${id}">Delete</button>`;
+          <button class="edit-comment" id="edit${id}" data-id="${id}" data-state="edit">Edit</button>
+          <button class="delete-comment" id="delete${id}" data-id="${id}">Delete</button>`;
           displaybox.innerHTML = content + modDash;
           let btnEdit = document.getElementById("edit" + id);
           let btnDelete = document.getElementById("delete" + id);

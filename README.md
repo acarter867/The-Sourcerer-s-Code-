@@ -21,16 +21,16 @@ Users must have Node installed to use. After intstalling node users must run 'np
 
 At the homepage users will be given forms to log in or sign up if they are coming to the website for the first time. After entering their information and being logged in they will be taken to see all of the users' posts. There is a button to make a new post, edit and delete previous ones, and to add and look at comments on posts. When users are finished they may log out of their account.
 
-![Picture of page displaying posts](\assets\images\Screenshot.png)
+![Picture of page displaying posts](\assets\Screenshot.png)
 
 ## Credits
 
-Alec Carter https://github.com/acarter867\
-Sam Tomaka https://github.com/altavada\
-Louis Quiles https://github.com/lquiles1\
-Mostafa Taleb https://github.com/Mufasa91\
-Martin Meggett https://github.com/MMeggett\
-Branning Knight https://github.com/BranningK\
+Alec Carter https://github.com/acarter867  
+Sam Tomaka https://github.com/altavada  
+Louis Quiles https://github.com/lquiles1  
+Mostafa Taleb https://github.com/Mufasa91  
+Martin Meggett https://github.com/MMeggett  
+Branning Knight https://github.com/BranningK  
 
 ## License
 

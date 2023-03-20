@@ -79,6 +79,7 @@ const editComment = async (event) => {
   let dataState = editorBtn.getAttribute("data-state");
   if (dataState == "edit") {
     const editBox = document.createElement("textarea");
+    editBox.classList.add("textarea-edit-comment")
     const cancelBtn = document.createElement("button");
     let rawText = originalBody.innerHTML;
     card.style.display = "none";

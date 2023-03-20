@@ -26,7 +26,6 @@ const getComments = async (event) => {
         displaybox.setAttribute('id', 'comment' + id);
         displaybox.innerHTML = content;
         containerEl.appendChild(displaybox);
-
         if (sessId === allComments[x].poster_username) {
           let modDash = `
           <button id="edit${id}" data-id="${id}" data-state="edit">Edit</button>
@@ -93,7 +92,7 @@ const editComment = async (event) => {
       card.style.display = "block";
       editorBtn.innerHTML = "Edit";
       editorBtn.setAttribute("data-state", "edit");
-      container.children[2].remove();
+      document.getElementById('cedit' + id).remove();
       event.target.remove();
     });
     container.insertBefore(editBox, editorBtn);

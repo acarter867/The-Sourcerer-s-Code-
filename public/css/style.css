@@ -13,7 +13,7 @@ button:hover{
 
 header{
     display: flex;
-    height: 5vh;
+    height: 3vw;
     justify-content: space-between;
     background-color: rgba(38, 45, 128, .3);
     min-height: 50px;
@@ -102,10 +102,12 @@ input{
     border-radius: 15px;
     color: white;
     padding: 3px;
+    transition: 0.3s;
 }
 
 .login-form button:hover{
     color: rgb(0, 255, 128);
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
 }
 
 .login-form input{
@@ -139,7 +141,7 @@ input{
     position: absolute;
     top: 15vw;
     left: 50%;
-    background-color: rgba(0, 0, 0, 0.61);    
+    background-color: rgba(0, 0, 0, 0.7);    
     backdrop-filter: blur(5px);
     padding: 15px;
     border-radius: 15px;
@@ -147,9 +149,7 @@ input{
     height: 23vw;
 }
 
-.sign-up-form button:hover{
-    color: rgb(0, 255, 128);
-}
+
 
 
 .sign-up-form h2{
@@ -167,6 +167,12 @@ input{
     border: none;
     border-radius: 15px;
     color: white;
+    transition: 0.3s;
+}
+
+.sign-up-form button:hover{
+    color: rgb(0, 255, 128);
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
 }
 
 .sign-up-form input{
@@ -233,6 +239,7 @@ input{
 
 .edit-delete-post button{
     font-size: .8vw;
+    transition: 0.3s;
 }
 
 /* post author & title */
@@ -296,6 +303,11 @@ input{
     background-color: rgba(155, 64, 64, .6);
     border: none;
     color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.delete-post:hover{
+    box-shadow: 0 0 25px 3px rgba(255, 0, 0, 0.5);
 }
 
 .edit-post{
@@ -303,6 +315,10 @@ input{
     border-color: rgb(92, 92, 235);;
     border: none;
     color: rgb(255, 255, 255);
+}
+
+.edit-post:hover{
+    box-shadow: 0 0 25px 3px rgba(92, 92, 235, .6);
 }
 
 .submit-comment{

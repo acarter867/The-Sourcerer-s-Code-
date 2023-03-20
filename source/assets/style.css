@@ -1,0 +1,136 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+nav{
+    background-color: #1e1f21;
+    border-bottom: 2px solid white;
+}
+.nav-list{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    color: white;
+}
+.nav-item:first-child{
+    margin-right: auto;
+   
+    
+}
+   
+.nav-item{
+    list-style: none;
+    padding-top: 10px;
+    margin: 15px;
+    
+   
+}
+.hero{
+    height: 600px;
+    background-image: url("../assets/images/luke-chesser-eICUFSeirc0-unsplash.jpg");
+    color: white;
+    border-bottom: 2px solid white;
+   
+}
+#hero-body{
+    text-align: center;
+   padding-top: 200px;
+}
+
+#hero-title{
+    font-size: larger;
+    margin-bottom: 15px;
+}
+#hero-subtitle{
+    width:500px;
+    font-size: 12px;
+    font-weight: 300;
+    
+    
+}
+#subheading-div{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width: 130px;
+    height: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: #9146FF;
+    margin-top: 25px;
+}
+.side-card{
+    background-color: black;
+    color: white;
+    border-right: 2px solid white;
+    border-top:2px solid white; 
+    margin-top: -251px;
+    height: 100vh;
+    width: 200px;
+}
+#question-card, #answer-card{
+    background-color: #1e1f21;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 15px;
+    width: 500px;
+    height: 200px;
+}
+#question-card-left{
+    color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-items: baseline;
+}
+#username, #userid{
+    margin-top: 5px;
+    margin-right: 10px;
+    padding-left: 5px;
+}
+#username{
+    margin-left: 5px;
+}
+#userid{
+   margin-left: -5px;
+   color: blue;
+}
+#userimg{
+   margin-right: 10px;
+}
+#content-text{
+    
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: white;
+}
+#answer-text{
+    margin-top: -35px;
+    margin-left: 69px;
+}
+#icon-list{
+    display: flex;
+    justify-content: left;
+    padding-left: 58px;
+}
+#icon-item{
+    
+    list-style: none;
+    margin: 10px;
+}
+#content{
+    display: flex;
+    justify-content: center;
+    
+}   

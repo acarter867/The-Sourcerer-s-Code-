@@ -10,7 +10,6 @@ router.get("/", withAuth, async (req, res) => {
       order: [["id", "DESC"]],
     });
     const posts = allPosts.map((project) => project.get({ plain: true }));
-    console.log(posts);
     if (req.session.logged_in) {
       res.render("homepage", {
         posts,
@@ -32,10 +31,8 @@ router.get("/posts/:id", async (req, res) => {
     const postData = await Posts.findByPk(req.params.id);
 
     const posts = postData.get({ plain: true });
-    console.log(posts);
     res.render("Posts", { posts, logged_in: req.session.logged_in });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -50,9 +47,7 @@ router.get("/tags/:id", async (req, res) => {
         WHERE posts.id = tags.post_id
         AND user.id = posts.poster_id
         AND tags.title = "${tag}";`);
-    console.log(results);
     if (!results) {
-      console.log("nope");
       res.status(400).json({
         message: "User does not exist, please edit your search and try again",
       });

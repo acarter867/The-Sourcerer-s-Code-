@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    font-family: garamond;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html{
@@ -249,12 +249,12 @@ input{
     text-align: center;
 }
 .post-username{
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     margin-right: 1vw;
 }
 
 .post-title{
-    font-size: 1.5vw;
+    font-size: 1.2vw;
 }
 
 /* Post Body */ 

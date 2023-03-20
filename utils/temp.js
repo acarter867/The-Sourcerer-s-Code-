@@ -1,10 +1,13 @@
+//Handle request to handle comments
 const editComment = async (event) => {
+  //Add unique id's to comments
   const editorBtn = event.target;
   const id = editorBtn.getAttribute("data-id");
   const container = document.getElementById("comment" + id);
   const originalBody = document.getElementById("cbody" + id);
   const card = document.getElementById("ccard" + id);
   let dataState = editorBtn.getAttribute("data-state");
+  //Check for edit mode
   if (dataState == "edit") {
     const editBox = document.createElement("textarea");
     const cancelBtn = document.createElement("button");
@@ -35,6 +38,7 @@ const editComment = async (event) => {
         body: JSON.stringify({ body }),
         headers: { "Content-Type": "application/json" },
       });
+      //Format comments if response is ok
       if (response.ok) {
         card.style.display = "block";
         originalBody.innerHTML = body;

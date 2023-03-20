@@ -1,6 +1,5 @@
 // get comment thread request
 const getComments = async (event) => {
-  console.log('test');
   const sessId = document.getElementById("session-username").textContent;
   const postId = event.target.getAttribute("data-id");
   let eventState = event.target.getAttribute("data-state");

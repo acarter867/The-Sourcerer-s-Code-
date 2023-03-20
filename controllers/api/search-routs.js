@@ -3,7 +3,6 @@ const { User, Posts, Tags } = require("../../models");
 
 // Search by userName
 router.get("/users/:userName", async (req, res) => {
-  console.log("hello");
   try {
     const searchedUser = User.findOne({
       where: {

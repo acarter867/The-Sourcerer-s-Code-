@@ -40,14 +40,12 @@ router.get("/:id", async (req, res) => {
 // New post
 router.post("/", async (req, res) => {
   try {
-    console.log("Req body full: ", req.body);
     const postData = await Posts.create({
       title: req.body.title,
       body: req.body.body,
       poster_id: req.session.userId,
       poster_username: req.session.username,
     });
-    console.log("This is post data: ", postData);
     res.status(200).json(postData);
   } catch (err) {
     console.log(err);

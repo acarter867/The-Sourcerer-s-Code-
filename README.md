@@ -15,7 +15,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-Users must have Node installed to use. After intstalling node users must run 'npm install' in terminal in appropriate folder and then run 'npm start'. After running 'npm start' load up the link that is provided in the terminal.
+N/A
 
 ## Usage
 
@@ -35,4 +35,8 @@ Branning Knight https://github.com/BranningK
 ## License
 
 Please refer to the license in the repo.
+
+## Link
+
+https://sourcerers-code.herokuapp.com/
 

@@ -202,6 +202,10 @@ input{
     margin-bottom: 2vw;
 }
 
+#username-new-post h1{
+    color: white;
+}
+
 #username-new-post button{
     margin-left: 10px;
     font-size: 1vw;
@@ -277,6 +281,41 @@ input{
 .comment-box{
     display: flex;
     flex-direction: column;
+}
+
+.edit-comment{
+    background-color: rgba(92, 92, 235, .6);
+    border-color: rgb(92, 92, 235);;
+    border: none;
+    color: rgb(255, 255, 255);
+}
+.edit-comment:hover{
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.8);
+}
+
+.delete-comment{
+    background-color: rgba(155, 64, 64, .6);
+    border: none;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.delete-comment:hover{
+    box-shadow: 0 0 25px 3px rgba(255, 0, 0, 0.8);
+}
+
+.cancel-comment-change{
+    background-color: rgba(92, 92, 235, .3);
+    border: none;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    margin: .5vw;
+}
+
+.cancel-comment-change:hover{
+    background-color: rgba(0, 255, 128, .3);
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+    
 }
 
 .comment-box textarea{
@@ -382,6 +421,15 @@ input{
     height: 5vw;
 }
 
+.textarea-edit-comment{
+    resize: none;
+    width: 12vw;
+    font-size: .8vw;
+    background-color: rgba(0, 0, 0, .1);
+    color: white;
+    height: 5vw;
+}
+
 .submit-btn{
     font-size: 1.5vw;
     background-color: rgba(92, 92, 235, .3);
@@ -395,4 +443,37 @@ input{
     cursor: pointer;
     background-color: rgba(0, 255, 128, .3);
     box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 600px){
+    header{
+        height: 1vw;
+    }
+    .post{
+        width: 50vw;
+        margin-bottom: 1vw;
+    }
+    .home-section{
+        margin-top: 3vh;
+    }
+    .username-title{
+        border-bottom: 1px solid gray;
+    }
+    .post-username, .post-body, .post-title{
+        font-size: 2.2vw;
+    }
+    .post button{
+        font-size: 1.5vw;
+    }
+    .comment-box textarea{
+        font-size: 1.5vw;
+        width: 20vw;
+    }
+    .comment{
+        font-size: 2vw;
+    }
+    .textarea-edit-comment{
+        width: 20vw;
+        font-size: 1.5vw;
+    }
 }

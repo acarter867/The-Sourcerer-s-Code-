@@ -70,6 +70,7 @@ const createComment = async (event) => {
   }
 };
 
+// edit comment request
 const editComment = async (event) => {
   const editorBtn = event.target;
   const id = editorBtn.getAttribute("data-id");
@@ -132,7 +133,7 @@ const deleteComment = async (event) => {
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    event.target.parentElement.remove();
+    document.getElementById('ccard' + id).remove();
   } else {
     alert("Could not delete comment.");
   }

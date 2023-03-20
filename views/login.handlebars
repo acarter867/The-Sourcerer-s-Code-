@@ -1,57 +1,62 @@
-<h2>Login</h2>
 
+<section class="login-page">
+  <div class="background-img">
+    <img src="/Images/projectHeaderNew.jpg" alt="Blurry Code">
+  </div>
+  <div class="catch-background"></div>
+
+<div class="login-title">Welcome To The Sourcerer's Code</div>
 <form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
+  <h2>Login</h2>
+  <div class="input-label">    
+    <label for="email-login">Email:</label>
     <input class="form-input" type="text" id="email-login" />
   </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
+  <div class="input-label">
+    <label for="password-login">Password:</label>
     <input class="form-input" type="password" id="password-login" />
   </div>
-  <div class="form-group">
-    <button id="btn-submit" class="btn btn-primary" type="submit">login</button>
+  <div class="btn-submit">
+    <button id="btn-submit" class="btn btn-primary" type="submit">Login</button>
   </div>
 </form>
 
 
 
-<section class="sign-up">
-    <div>
+<section class="sign-up-form">
+  <h2>Sign Up</h2>
+    <div class="input-label">
       <label for="first-name-sign-up">First Name:</label>
       <input class="form-input" type="text" id="first-name-sign-up">
     </div>
     
-    <div>
+    <div class="input-label">
       <label for="last-name-sign-up">Last Name:</label>
       <input class="form-input" type="text" id="last-name-sign-up">
     </div>
 
-    <div>
+    <div class="input-label">
       <label for="email-sign-up">Email:</label>
       <input class="form-input" type="email" id="email-sign-up">
     </div>
 
-    <div>
+    <div class="input-label">
       <label for="username-sign-up">Username:</label>
       <input class="form-input" type="text" id="username-sign-up">
-      <button id="username-availability">Check availability</button>
-      <p id="username-status"></p>
     </div>
 
-    <div>
+    <div class="input-label">
       <label for="password-sign-up">Password:</label>
       <input class="form-input" type="password" id="password-sign-up">
     </div>    
 
-    <div>
+    <div class="input-label">
       <label for="retype-password">Re-enter Password:</label>
       <input class="form-input" type="password" id="retype-password">
-      <p id="password-status"></p>
     </div>
     <button id="submit-sign-up" class="btn">Sign up!</button>
 </section>
-
+</section>
 
 <script src="/js/login.js"></script>
 <script src="/js/signup.js"></script>

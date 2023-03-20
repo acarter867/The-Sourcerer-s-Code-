@@ -15,13 +15,13 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-N/A
+Users must have Node installed to use. After intstalling node users must run 'npm install' in terminal in appropriate folder and then run 'npm start'. After running 'npm start' load up the link that is provided in the terminal.
 
 ## Usage
 
 At the homepage users will be given forms to log in or sign up if they are coming to the website for the first time. After entering their information and being logged in they will be taken to see all of the users' posts. There is a button to make a new post, edit and delete previous ones, and to add and look at comments on posts. When users are finished they may log out of their account.
 
-![Picture of page displaying posts](\assets\Screenshot.png)
+![Picture of page displaying posts](/public/Images/Screenshot.png)
 
 ## Credits
 

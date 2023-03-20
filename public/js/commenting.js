@@ -1,6 +1,5 @@
 // get comment thread request
 const getComments = async (event) => {
-  console.log('test');
   const sessId = document.getElementById("session-username").textContent;
   const postId = event.target.getAttribute("data-id");
   let eventState = event.target.getAttribute("data-state");
@@ -15,21 +14,21 @@ const getComments = async (event) => {
     if (response.ok) {
       const allComments = await response.json();
       for (let x in allComments) {
-        console.log(allComments[x]);
         let id = allComments[x].id;
         let displaybox = document.createElement("div");
         let content = `
-        <div id="ccard${id}">
+        <div class="comment" id="ccard${id}">
           <p id="cbody${id}">${allComments[x].body}</p>
           <p id="byline${id}"> – ${allComments[x].poster_username}</p>
         </div>`;
-        displaybox.setAttribute('id', 'comment' + id);
+        displaybox.setAttribute("id", "comment" + id);
         displaybox.innerHTML = content;
         containerEl.appendChild(displaybox);
         if (sessId === allComments[x].poster_username) {
+          console.log("Is owner");
           let modDash = `
-          <button id="edit${id}" data-id="${id}" data-state="edit">Edit</button>
-          <button id="delete${id}" data-id="${id}">Delete</button>`;
+          <button class="edit-comment" id="edit${id}" data-id="${id}" data-state="edit">Edit</button>
+          <button class="delete-comment" id="delete${id}" data-id="${id}">Delete</button>`;
           displaybox.innerHTML = content + modDash;
           let btnEdit = document.getElementById("edit" + id);
           let btnDelete = document.getElementById("delete" + id);
@@ -80,18 +79,20 @@ const editComment = async (event) => {
   let dataState = editorBtn.getAttribute("data-state");
   if (dataState == "edit") {
     const editBox = document.createElement("textarea");
+    editBox.classList.add("textarea-edit-comment")
     const cancelBtn = document.createElement("button");
     let rawText = originalBody.innerHTML;
     card.style.display = "none";
     editBox.value = rawText;
-    editBox.setAttribute('id', 'cedit' + id);
+    editBox.setAttribute("id", "cedit" + id);
     cancelBtn.innerHTML = "Cancel Changes";
-    cancelBtn.setAttribute('id', 'ccancel' + id);
+    cancelBtn.setAttribute("id", "ccancel" + id);
+    cancelBtn.classList.add("cancel-comment-change")
     cancelBtn.addEventListener("click", (event) => {
       card.style.display = "block";
       editorBtn.innerHTML = "Edit";
       editorBtn.setAttribute("data-state", "edit");
-      document.getElementById('cedit' + id).remove();
+      document.getElementById("cedit" + id).remove();
       event.target.remove();
     });
     container.insertBefore(editBox, editorBtn);
@@ -100,7 +101,7 @@ const editComment = async (event) => {
     editorBtn.innerHTML = "Submit Changes";
   } else {
     event.preventDefault();
-    const input = document.getElementById('cedit' + id);
+    const input = document.getElementById("cedit" + id);
     let body = input.value;
     if (body) {
       const response = await fetch("/api/comments/" + id, {
@@ -111,7 +112,7 @@ const editComment = async (event) => {
       if (response.ok) {
         card.style.display = "block";
         originalBody.innerHTML = body;
-        const cancel = document.getElementById('ccancel' + id);
+        const cancel = document.getElementById("ccancel" + id);
         input.remove();
         cancel.remove();
         editorBtn.innerHTML = "Edit";
@@ -133,13 +134,15 @@ const deleteComment = async (event) => {
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    document.getElementById('ccard' + id).remove();
+    document.getElementById("comment" + id).remove();
   } else {
     alert("Could not delete comment.");
   }
 };
 
 // event handlers
+
+
 document.querySelectorAll(".render-comments").forEach((btn) => {
   btn.addEventListener("click", getComments);
 });

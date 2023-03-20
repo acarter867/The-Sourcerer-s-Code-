@@ -1,3 +1,4 @@
+//New user signup
 const signUpFormHandler = async (event) => {
   event.preventDefault();
   const firstName = document.getElementById("first-name-sign-up").value;
@@ -5,14 +6,10 @@ const signUpFormHandler = async (event) => {
   const username = document.getElementById("username-sign-up").value;
   const email = document.getElementById("email-sign-up").value;
   const password = document.getElementById("password-sign-up").value;
-  const rePassword = document.getElementById("first-name-sign-up").value;
+  const rePassword = document.getElementById("retype-password").value;
 
-  const btnCheckUsername = document.getElementById("username-availability");
-  btnCheckUsername.addEventListener("click", setStatus);
-
-  const passwordStatus = document.getElementById("password-status");
-
-  if (firstName && lastName && password && rePassword && username && email) {
+  //Check ALL credentials
+  if (firstName && lastName && password && rePassword && username && email && (rePassword === password)) {
     let body = {
       firstName: firstName,
       lastName: lastName,
@@ -32,20 +29,11 @@ const signUpFormHandler = async (event) => {
     } else {
       alert("an error has occurred");
     }
+    //inform users passwords do not match
+  }if(password !== rePassword){
+    alert("PASSWORDS DO NOT MATCH")
   }
 };
-
-function setStatus() {
-  const username = document.getElementById("username-sign-up").value;
-  const usernameStatus = document.getElementById("username-status");
-  if (checkUsername(username)) {
-    usernameStatus.textContent = "Username is available";
-    usernameStatus.style.color = "green";
-  } else {
-    usernameStatus.textContent = "Username is unavailable";
-    usernameStatus.style.color = "red";
-  }
-}
 
 const btnSubmitNew = document
   .getElementById("submit-sign-up")

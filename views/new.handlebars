@@ -1,26 +1,32 @@
+<button id="btn-back" class="btn-back">Back</button>
+
 {{#if editMode}}
-<form>
+<button class="fake-button" id="logout"></button>
+<form class="post-edit-form">
+  <div class="edit-post-title">Edit Post</div>
   <div>
-    <input id="post-title" type="text" value="{{post.title}}"/>
+    <input class="edit-post-title-input" id="post-title" type="text" value="{{post.title}}"/>
   </div>
   <div class="form-group">
-    <textarea id="post-body">{{post.body}}</textarea>
+    <textarea class="new-edit-textarea" id="post-body" placeholder="Edit post...">{{post.body}}</textarea>
   </div>
   <div class="form-group">
-    <input id="submitpost" type="submit" data-id="{{post.id}}" value="Publish"/>
+    <input class="submit-btn" id="submitpost" type="submit" data-id="{{post.id}}" value="Publish"/>
   </div>
 </form>
 <script src="/js/editpost.js"></script>
 {{else}}
-<form>
+<button class="fake-button" id="logout"></button>
+<form class="post-create-form">
+  <div class="new-post-title">Make a New Post</div>
   <div>
-    <input id="post-title" type="text" placeholder="Title"/>
+    <input class="new-post-title-input" id="post-title" type="text" placeholder="Title"/>
   </div>
   <div class="form-group">
-    <textarea id="post-body"></textarea>
+    <textarea class="new-create-textarea" id="post-body" placeholder="Write post..."></textarea>
   </div>
   <div class="form-group">
-    <input id="submitpost" type="submit" value="Publish"/>
+    <input class="submit-btn" id="submitpost" type="submit" value="Publish"/>
   </div>
 </form>
 <script src="/js/newpost.js"></script>

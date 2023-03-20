@@ -86,6 +86,7 @@ const editComment = async (event) => {
     editBox.setAttribute("id", "cedit" + id);
     cancelBtn.innerHTML = "Cancel Changes";
     cancelBtn.setAttribute("id", "ccancel" + id);
+    cancelBtn.classList.add("cancel-comment-change")
     cancelBtn.addEventListener("click", (event) => {
       card.style.display = "block";
       editorBtn.innerHTML = "Edit";

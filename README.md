@@ -4,7 +4,7 @@
 
 This application provides users with a way to create secure accounts that allow them to ask questions to other users. Users can also edit and delete their own posts. Users are able to view other people's posts and reply to them in the comments while also seeing other comments.
 
-## Table of Contents (Optional)
+## Table of Contents
 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 
@@ -25,12 +25,12 @@ At the homepage users will be given forms to log in or sign up if they are comin
 
 ## Credits
 
-Alec Carter https://github.com/acarter867
-Sam Tomaka https://github.com/altavada
-Louis Quiles https://github.com/lquiles1
-Mostafa Taleb https://github.com/Mufasa91
-Martin Meggett https://github.com/MMeggett
-Branning Knight https://github.com/BranningK
+Alec Carter https://github.com/acarter867\
+Sam Tomaka https://github.com/altavada\
+Louis Quiles https://github.com/lquiles1\
+Mostafa Taleb https://github.com/Mufasa91\
+Martin Meggett https://github.com/MMeggett\
+Branning Knight https://github.com/BranningK\
 
 ## License
 

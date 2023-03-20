@@ -1,6 +1,6 @@
 // get comment thread request
 const getComments = async (event) => {
-  console.log("test");
+  console.log('test');
   const sessId = document.getElementById("session-username").textContent;
   const postId = event.target.getAttribute("data-id");
   let eventState = event.target.getAttribute("data-state");
@@ -35,8 +35,6 @@ const getComments = async (event) => {
           let btnDelete = document.getElementById("delete" + id);
           btnEdit.addEventListener("click", editComment);
           btnDelete.addEventListener("click", deleteComment);
-        } else {
-          console.log("Not OWNER");
         }
       }
     }

@@ -14,7 +14,6 @@ const getComments = async (event) => {
     if (response.ok) {
       const allComments = await response.json();
       for (let x in allComments) {
-        console.log(allComments[x]);
         let id = allComments[x].id;
         let displaybox = document.createElement("div");
         let content = `
@@ -22,10 +21,11 @@ const getComments = async (event) => {
           <p id="cbody${id}">${allComments[x].body}</p>
           <p id="byline${id}"> – ${allComments[x].poster_username}</p>
         </div>`;
-        displaybox.setAttribute('id', 'comment' + id);
+        displaybox.setAttribute("id", "comment" + id);
         displaybox.innerHTML = content;
         containerEl.appendChild(displaybox);
         if (sessId === allComments[x].poster_username) {
+          console.log("Is owner");
           let modDash = `
           <button class="edit-comment" id="edit${id}" data-id="${id}" data-state="edit">Edit</button>
           <button class="delete-comment" id="delete${id}" data-id="${id}">Delete</button>`;
@@ -83,14 +83,14 @@ const editComment = async (event) => {
     let rawText = originalBody.innerHTML;
     card.style.display = "none";
     editBox.value = rawText;
-    editBox.setAttribute('id', 'cedit' + id);
+    editBox.setAttribute("id", "cedit" + id);
     cancelBtn.innerHTML = "Cancel Changes";
-    cancelBtn.setAttribute('id', 'ccancel' + id);
+    cancelBtn.setAttribute("id", "ccancel" + id);
     cancelBtn.addEventListener("click", (event) => {
       card.style.display = "block";
       editorBtn.innerHTML = "Edit";
       editorBtn.setAttribute("data-state", "edit");
-      document.getElementById('cedit' + id).remove();
+      document.getElementById("cedit" + id).remove();
       event.target.remove();
     });
     container.insertBefore(editBox, editorBtn);
@@ -99,7 +99,7 @@ const editComment = async (event) => {
     editorBtn.innerHTML = "Submit Changes";
   } else {
     event.preventDefault();
-    const input = document.getElementById('cedit' + id);
+    const input = document.getElementById("cedit" + id);
     let body = input.value;
     if (body) {
       const response = await fetch("/api/comments/" + id, {
@@ -110,7 +110,7 @@ const editComment = async (event) => {
       if (response.ok) {
         card.style.display = "block";
         originalBody.innerHTML = body;
-        const cancel = document.getElementById('ccancel' + id);
+        const cancel = document.getElementById("ccancel" + id);
         input.remove();
         cancel.remove();
         editorBtn.innerHTML = "Edit";
@@ -132,7 +132,7 @@ const deleteComment = async (event) => {
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    document.getElementById('ccard' + id).remove();
+    document.getElementById("comment" + id).remove();
   } else {
     alert("Could not delete comment.");
   }

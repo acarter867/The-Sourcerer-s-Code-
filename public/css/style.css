@@ -1,6 +1,10 @@
 * {
     margin: 0;
+    font-family: garamond;
+}
 
+html{
+    background-image: url('/Images/pexels-mahdi-bafande-14832629.jpg');
 }
 
 button:hover{
@@ -11,7 +15,7 @@ header{
     display: flex;
     height: 5vh;
     justify-content: space-between;
-    background-color: rgb(38, 45, 128);
+    background-color: rgba(38, 45, 128, .3);
     min-height: 50px;
 }
 
@@ -23,8 +27,15 @@ h1{
     height: 100%;
     width: fit-content;
     font-size: 1vw;
-    background-color: rgb(92, 92, 235);
+    background-color: rgba(0, 0, 0, 0);
     border: none;
+    color: white;
+    margin-right: .5vw;
+    transition: 0.5s;
+}
+
+#logout:hover{
+    background-color: rgb(0, 255, 128, .3);
 }
 
 #logout:hover{
@@ -34,6 +45,7 @@ h1{
 #project-title{
     padding-left: 10px;
     padding-top: 10px;
+    color: rgb(255, 255, 255);
 }
 
 /*********************************************LOG IN PAGE*/
@@ -44,14 +56,34 @@ h1{
     color: white;
 }
 
+input{
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.login-title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 7vw;
+    font-size: 3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 255, 128);
+    background-color: rgba(0, 0, 0, 0.61);  
+    box-shadow: 0 0 25px 15px rgba(0, 0, 0, .9);
+    padding: .5vw;
+    border-radius: 10px;
+}
 .login-form{
     position: absolute;
-    top: 30%;
+    top: 15vw;
     left: 20%;
     background-color: rgba(0, 0, 0, 0.61);    
     backdrop-filter: blur(5px);
     padding: 15px;
     border-radius: 15px;
+    box-shadow: 0 0 25px 15px rgba(0, 0, 0, .9);
+    height: 13vw;
 }
 
 .login-form h2{
@@ -65,6 +97,15 @@ h1{
     font-size: 1.5vw;
     align-items: center;
     margin-left: 45%;
+    background-color: rgba(0, 0, 0, .5);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 3px;
+}
+
+.login-form button:hover{
+    color: rgb(0, 255, 128);
 }
 
 .login-form input{
@@ -76,7 +117,7 @@ h1{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 1vw;
     font-size: 1.5vw;
 }
 
@@ -86,27 +127,35 @@ h1{
 
 
 .background-img img{
-    width: 100%;
-    height: 100%;
+    width: 103vw;
+    height: 103vh;
     background-attachment: fixed;
 }
+
 
 /* Sign-up-form */ 
 
 .sign-up-form{
     position: absolute;
-    top: 30%;
+    top: 15vw;
     left: 50%;
     background-color: rgba(0, 0, 0, 0.61);    
     backdrop-filter: blur(5px);
     padding: 15px;
     border-radius: 15px;
+    box-shadow: 0 0 25px 15px rgba(0, 0, 0, .9);
+    height: 23vw;
 }
+
+.sign-up-form button:hover{
+    color: rgb(0, 255, 128);
+}
+
 
 .sign-up-form h2{
     font-size: 3vw;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: .5vw;
 }
 
 .sign-up-form button{
@@ -114,6 +163,10 @@ h1{
     font-size: 1.5vw;
     align-items: center;
     margin-left: 45%;
+    background-color: rgba(0, 0, 0, .5);
+    border: none;
+    border-radius: 15px;
+    color: white;
 }
 
 .sign-up-form input{
@@ -124,30 +177,50 @@ h1{
 /******************************HOMEPAGE***************************/
 .home-section{
     margin: 10px;
+    position: absolute;
+    margin-top: 7vh;
+    left: 50%;
+    transform: translateX(-50%);
 
+}
+
+#session-username{
+    color: white;
 }
 
 #username-new-post{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: -2vw;
+    margin-bottom: 2vw;
 }
 
 #username-new-post button{
     margin-left: 10px;
     font-size: 1vw;
-    background-color: rgb(92, 92, 235);
+    background-color: rgba(92, 92, 235, .3);
+    color: white;
     border: none;
     border-radius: 10px;
+    transition: 0.5s;
+}
+
+#username-new-post button:hover{
+    background-color: rgba(0, 255, 128, .3);
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+
 }
 
 /* Individual Posts */
 .post{
     border: 2px solid black;
     width: 30vw;
-    margin-bottom: 30px;
+    margin-bottom: 3vh;
     padding: 10px;
-    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 0 0 25px 8px rgba(0, 0, 0, .9);
 }
 
 /* edit/delete post buttons */
@@ -155,6 +228,7 @@ h1{
     position: relative;
     left: 10%;
     align-content: center;
+    
 }
 
 .edit-delete-post button{
@@ -202,6 +276,8 @@ h1{
     resize: none;
     width: 12vw;
     font-size: 1vw;
+    background-color: rgba(0, 0, 0, .1);
+    color: white;
 }
 
 .show-hide-comments{
@@ -216,3 +292,42 @@ h1{
     font-size: 1vw;
 }
 
+.delete-post{
+    background-color: rgba(155, 64, 64, .6);
+    border: none;
+    color: rgb(255, 255, 255);
+}
+
+.edit-post{
+    background-color: rgba(92, 92, 235, .6);
+    border-color: rgb(92, 92, 235);;
+    border: none;
+    color: rgb(255, 255, 255);
+}
+
+.submit-comment{
+    background-color: rgba(86, 205, 140, 0.3);
+    border: none;
+    color: white;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    transition: 0.5s;
+}
+
+.submit-comment:hover{
+    background-color: rgba(86, 205, 140, 0.6);
+}
+
+.render-comments{
+    padding: 3px;
+    background-color: rgba(86, 205, 140, 0.1);
+    transition: 0.3s;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.render-comments:hover{
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+    background-color: rgba(14, 183, 90, 0.4);
+}

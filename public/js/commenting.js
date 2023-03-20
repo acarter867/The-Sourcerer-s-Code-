@@ -141,6 +141,8 @@ const deleteComment = async (event) => {
 };
 
 // event handlers
+
+
 document.querySelectorAll(".render-comments").forEach((btn) => {
   btn.addEventListener("click", getComments);
 });

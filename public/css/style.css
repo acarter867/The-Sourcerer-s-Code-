@@ -149,9 +149,6 @@ input{
     height: 23vw;
 }
 
-
-
-
 .sign-up-form h2{
     font-size: 3vw;
     text-align: center;
@@ -181,6 +178,22 @@ input{
 }
 
 /******************************HOMEPAGE***************************/
+.btn-back{
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    background-color: rgba(0, 255, 128, .5);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.btn-back:hover{
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+}
+
 .home-section{
     margin: 10px;
     position: absolute;
@@ -475,5 +488,32 @@ input{
     .textarea-edit-comment{
         width: 20vw;
         font-size: 1.5vw;
+    }
+    .post-create-form, .post-edit-form{
+        width: 50vw;
+        font-size: 2vw;
+    }
+    .new-post-title-input, .edit-post-title-input{
+        width: 25vw;
+        font-size: 2vw;
+        border: .5px solid gray;
+    }
+
+    .new-create-textarea, .new-edit-textarea{
+        width: 25vw;
+        height: 15vw;
+        font-size: 1.7vw;
+    }
+
+    .btn-back{
+        font-size: 3vw;
+    }
+
+    .submit-btn{
+        font-size: 2.5vw;
+    }
+
+    .new-post-title{
+        font-size: 5vw;
     }
 }

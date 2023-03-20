@@ -18,4 +18,7 @@ const newPostHandler = async (event) => {
   }
 };
 
+document.getElementById('btn-back').addEventListener('click', () => {
+  document.location.replace('/')
+});
 document.querySelector("#submitpost").addEventListener("click", newPostHandler);

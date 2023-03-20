@@ -20,3 +20,8 @@ document
       }
     }
   });
+
+  
+  document.getElementById('btn-back').addEventListener('click', () => {
+    document.location.replace('/')
+  });

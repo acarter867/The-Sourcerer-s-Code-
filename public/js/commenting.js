@@ -1,6 +1,6 @@
 // get comment thread request
 const getComments = async (event) => {
-  console.log("test");
+  console.log('test');
   const sessId = document.getElementById("session-username").textContent;
   const postId = event.target.getAttribute("data-id");
   let eventState = event.target.getAttribute("data-state");
@@ -26,7 +26,6 @@ const getComments = async (event) => {
         displaybox.setAttribute('id', 'comment' + id);
         displaybox.innerHTML = content;
         containerEl.appendChild(displaybox);
-
         if (sessId === allComments[x].poster_username) {
           let modDash = `
           <button id="edit${id}" data-id="${id}" data-state="edit">Edit</button>
@@ -36,8 +35,6 @@ const getComments = async (event) => {
           let btnDelete = document.getElementById("delete" + id);
           btnEdit.addEventListener("click", editComment);
           btnDelete.addEventListener("click", deleteComment);
-        } else {
-          console.log("Not OWNER");
         }
       }
     }
@@ -93,7 +90,7 @@ const editComment = async (event) => {
       card.style.display = "block";
       editorBtn.innerHTML = "Edit";
       editorBtn.setAttribute("data-state", "edit");
-      container.children[2].remove();
+      document.getElementById('cedit' + id).remove();
       event.target.remove();
     });
     container.insertBefore(editBox, editorBtn);

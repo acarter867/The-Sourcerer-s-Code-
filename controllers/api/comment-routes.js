@@ -11,7 +11,7 @@ router.get("/:id", async (req, res) => {
         },
       });
       const comments = commentData.map((arr) => arr.get({ plain: true }));
-      console.log('Comments: ', comments);
+      console.log("Comments: ", comments);
       if (comments) {
         res.status(200).json(comments);
       }

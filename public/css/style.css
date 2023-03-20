@@ -331,3 +331,52 @@ input{
     box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
     background-color: rgba(14, 183, 90, 0.4);
 }
+
+/******************************************** NEW POST***********************/
+.new-post-title, .edit-post-title{
+    font-size: 4vw;
+    color: rgb(86, 205, 140);
+    margin-top: 1.5vw;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.5);
+}
+
+.post-create-form, .post-edit-form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+.new-post-title-input, .edit-post-title-input{
+    margin-top: 2vw;
+    width: 12vw;
+    font-size: 1.5vw;
+}
+
+.new-create-textarea, .new-edit-textarea{
+    resize: none;
+    width: 12vw;
+    font-size: 1vw;
+    background-color: rgba(0, 0, 0, .1);
+    color: white;
+    height: 5vw;
+}
+
+.submit-btn{
+    font-size: 1.5vw;
+    background-color: rgba(92, 92, 235, .3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.submit-btn:hover{
+    cursor: pointer;
+    background-color: rgba(0, 255, 128, .3);
+    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.3);
+}

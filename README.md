@@ -12,7 +12,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Demo](#Demo)
+- [Deployment](#Deployment)
 
 ## Installation
 
@@ -37,7 +37,7 @@ Branning Knight https://github.com/BranningK
 
 Please refer to the license in the repo.
 
-## Demo
+## Deployment
 
 https://sourcerers-code.herokuapp.com/
 

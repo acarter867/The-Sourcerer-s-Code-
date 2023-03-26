@@ -77,13 +77,15 @@ input{
 .login-form{
     position: absolute;
     top: 15vw;
-    left: 20%;
+    left: 18%;
     background-color: rgba(0, 0, 0, 0.61);    
     backdrop-filter: blur(5px);
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 0 25px 15px rgba(0, 0, 0, .9);
     height: 13vw;
+    margin-right: 10vw;
+    width: 30vw;
 }
 
 .login-form h2{
@@ -140,13 +142,15 @@ input{
 .sign-up-form{
     position: absolute;
     top: 15vw;
-    left: 50%;
+    left: 52%;
     background-color: rgba(0, 0, 0, 0.7);    
     backdrop-filter: blur(5px);
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 0 25px 15px rgba(0, 0, 0, .9);
-    height: 23vw;
+    height: 25vw;
+    width: 34vw;
+    padding-bottom: 2vw;
 }
 
 .sign-up-form h2{
@@ -515,5 +519,38 @@ input{
 
     .new-post-title{
         font-size: 5vw;
+    }
+
+    .login-form{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: 22vw;
+    }
+
+    .login-form button, .sign-up-form button{
+        font-size: 2.5vw;
+    }
+
+    .login-form h2, .sign-up-form h2{
+        font-size: 5vw;
+    }
+
+    .login-form label, .sign-up-form label{
+        font-size: 2.5vw;
+        margin-bottom: 1vw;
+    }
+
+    .login-form input, .sign-up-form input{
+        font-size: 2.5vw;
+    }
+    .sign-up-form{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 28vh;
+        width: 60%;
+        height: 23vh;
     }
 }
